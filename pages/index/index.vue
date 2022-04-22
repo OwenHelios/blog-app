@@ -1,13 +1,14 @@
 <template>
-	<view>
-		<main v-if="PageCur=='main'"></main>
+	<view class="page">
+		<home v-if="PageCur=='home'" />
+		<quiz v-if="PageCur=='quiz'" />
 		
 		<view class="cu-bar tabbar bg-white shadow foot">
-			<view class="action" @click="NavChange" data-cur="main">
+			<view class="action" @click="NavChange" data-cur="home">
 				<view class='cuIcon-cu-image'>
-					<image :src="'/static/main' + [PageCur=='main'?'_selected':''] + '.png'"></image>
+					<image :src="'/static/home' + [PageCur=='home'?'_selected':''] + '.png'"></image>
 				</view>
-				<view :class="PageCur=='main'?'text-blue':'text-gray'">首页</view>
+				<view :class="PageCur=='home'?'text-blue':'text-gray'">首页</view>
 			</view>
 			<view class="action" @click="NavChange" data-cur="quiz">
 				<view class='cuIcon-cu-image'>
@@ -38,10 +39,16 @@
 </template>
 
 <script>
+	import home from './home.vue'
+	import quiz from './quiz.vue'
 	export default {
+		components:{
+			home,
+			quiz
+		},
 		data() {
 		return {
-				PageCur: 'main'
+				PageCur: 'home'
 			}
 		},
 		methods: {
@@ -53,4 +60,9 @@
 </script>
 
 <style lang="scss">
+	.page{
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+	}
 </style>
