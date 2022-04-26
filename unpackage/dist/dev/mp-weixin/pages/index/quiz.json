@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "quiz-card": "/components/quiz-card/quiz-card"
+  },
+  "component": true
+}

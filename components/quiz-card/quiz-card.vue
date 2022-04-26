@@ -11,17 +11,6 @@
 				<text>{{item}}</text>
 			</button>
 		</view>
-		
-		<!-- <view class="button-wrapper">
-			<button disabled={!!userAnswer} onClick={callback} value={option}>
-				{userAnswer?.answer === option && (
-				<text className="feedback">
-					{userAnswer?.isCorrect ? 'CORRECT' : 'WRONG'}
-				</text>
-				)}
-				<text>{option}</text>
-			</button>
-		</view> -->
 	</view>
 </template>
 
@@ -59,7 +48,7 @@
 
 <style lang="scss">
 	.quiz-card {
-		width: 85%;
+		width: 250px;
 		background-color: #ebfeff;
 		border-radius: 10px;
 		border: 2px solid #0085a3;

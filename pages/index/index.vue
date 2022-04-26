@@ -2,6 +2,8 @@
 	<view class="page">
 		<home v-if="PageCur=='home'" />
 		<quiz v-if="PageCur=='quiz'" />
+		<post v-if="PageCur=='post'" />
+		<me v-if="PageCur=='me'" />
 		
 		<view class="cu-bar tabbar bg-white shadow foot">
 			<view class="action" @click="NavChange" data-cur="home">
@@ -41,10 +43,14 @@
 <script>
 	import home from './home.vue'
 	import quiz from './quiz.vue'
+	import post from './post.vue'
+	import me from './me.vue'
 	export default {
 		components:{
 			home,
-			quiz
+			quiz,
+			me,
+			post
 		},
 		data() {
 		return {

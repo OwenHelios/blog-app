@@ -3,14 +3,24 @@
 		<cu-custom bgColor="bg-gradual-pink">
 			<block slot="content">导航栏</block>
 		</cu-custom>
-		<scroll-view scroll-x class="bg-white nav" scroll-with-animation :scroll-left="scrollLeft">
+		<view class="nav-wrapper" style="height: 90upx;">
+		<scroll-view scroll-x class="bg-white nav fixed" :style="[{top:CustomBar + 'px'}]" scroll-with-animation :scroll-left="scrollLeft">
 			<view class="cu-item" :class="index==TabCur?'text-green cur':''" v-for="(item,index) in 10" :key="index" @tap="tabSelect" :data-id="index">
 				Tab{{index}}
 			</view>
 		</scroll-view>
-		<view v-for="(item, index) in players">
-			<fire :player="item" :key='index'/>
 		</view>
+		<scroll-view enable-back-to-top scroll-y class="content-scroll">
+			<article-card />
+			<article-card />
+			<article-card />
+			<article-card />
+			<article-card />
+			<article-card />
+			<article-card />
+			<article-card />
+			<view class="cu-tabbar-height"></view>
+		</scroll-view>
 	</view>
 </template>
 
@@ -20,7 +30,7 @@
 			return {
 				TabCur: 0,
 				scrollLeft: 0,
-				players: [{position: 1},{position: 2},{position: 3}]
+				CustomBar: this.CustomBar
 			}
 		},
 		onLoad() {
@@ -35,6 +45,8 @@
 	}
 </script>
 
-<style>
-	
+<style lang="scss">
+	.content-scroll {
+		padding: 10px;
+	}
 </style>
